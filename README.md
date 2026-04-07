@@ -1,2 +1,2 @@
 # Open Security Policies
-A collection of small, consumable security policies
+A collection of consumable security policies tailored for specific industries
