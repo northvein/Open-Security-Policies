@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building an Information Security Standards Programme — Law Firm Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f8f7f4;
+    color: #1a1a18;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  /* Hero */
+  .hero {
+    border-left: 3px solid #1D9E75;
+    padding: 2.5rem 0 2.5rem 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #1D9E75;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.18;
+    color: #1a1a18;
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.72;
+    color: #5a5a56;
+    max-width: 640px;
+  }
+
+  /* TOC */
+  .toc-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 0.5px solid #d8d6cc;
+    padding: 1.75rem 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .toc-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888780;
+    margin-bottom: 1.1rem;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 6px;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 11px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1a1a18;
+    border: 0.5px solid transparent;
+    transition: background 0.15s, border-color 0.15s;
+  }
+
+  .toc-item:hover {
+    background: #f8f7f4;
+    border-color: #c8c6bc;
+  }
+
+  .toc-num {
+    font-size: 11px;
+    font-weight: 500;
+    color: #1D9E75;
+    min-width: 22px;
+  }
+
+  .toc-text {
+    font-size: 13px;
+    color: #1a1a18;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 1rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    margin-bottom: 1.4rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 0.5px solid #d8d6cc;
+  }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: #1D9E75;
+    line-height: 1;
+    min-width: 2.8rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #1a1a18;
+    padding-top: 0.35rem;
+  }
+
+  /* Prose */
+  .prose {
+    font-size: 0.95rem;
+    line-height: 1.78;
+    color: #5a5a56;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose strong {
+    color: #1a1a18;
+    font-weight: 500;
+  }
+
+  /* Callout */
+  .callout {
+    border-left: 3px solid #1D9E75;
+    background: #f0faf6;
+    padding: 1.1rem 1.4rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.75rem 0;
+    font-size: 0.91rem;
+    line-height: 1.68;
+    color: #1a1a18;
+  }
+
+  .callout-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1D9E75;
+    margin-bottom: 0.45rem;
+  }
+
+  /* Principle pills */
+  .principle-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 1.4rem 0;
+  }
+
+  .principle-pill {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 13px;
+    border-radius: 99px;
+    background: #f0faf6;
+    border: 0.5px solid #9FE1CB;
+    color: #085041;
+  }
+
+  /* Two-layer cards */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 620px) {
+    .two-col { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.9rem; }
+    .boundary-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Domain grid */
+  .domain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 13px;
+    margin: 1.6rem 0;
+  }
+
+  .domain-card {
+    background: #fff;
+    border: 0.5px solid #d8d6cc;
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem;
+  }
+
+  .domain-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.85rem;
+  }
+
+  .domain-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .domain-name {
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: #1a1a18;
+    flex: 1;
+  }
+
+  .domain-count {
+    font-size: 11px;
+    color: #888780;
+  }
+
+  .domain-standards {
+    list-style: none;
+    padding: 0;
+  }
+
+  .domain-standards li {
+    font-size: 12px;
+    color: #5a5a56;
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .domain-standards li::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #c8c6bc;
+    flex-shrink: 0;
+  }
+
+  /* Badges */
+  .priority-badge {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 99px;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .badge-high { background: #E1F5EE; color: #0F6E56; }
+  .badge-med  { background: #FAEEDA; color: #854F0B; }
+  .badge-low  { background: #F1EFE8; color: #5F5E5A; }
+
+  /* Phase rows */
+  .phase-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1.1rem;
+    margin-bottom: 1.4rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 0.5px solid #d8d6cc;
+    align-items: start;
+  }
+
+  .phase-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .phase-label { text-align: center; }
+
+  .phase-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    margin: 0 auto 6px;
+    font-weight: 500;
+  }
+
+  .phase-months {
+    font-size: 10px;
+    color: #888780;
+    text-align: center;
+  }
+
+  .phase-title {
+    font-weight: 500;
+    font-size: 0.91rem;
+    color: #1a1a18;
+    margin-bottom: 0.4rem;
+  }
+
+  .phase-desc {
+    font-size: 0.85rem;
+    line-height: 1.67;
+    color: #5a5a56;
+  }
+
+  /* Tabs */
+  .agent-flow {
+    background: #f8f7f4;
+    border-radius: 12px;
+    border: 0.5px solid #d8d6cc;
+    overflow: hidden;
+    margin: 1.6rem 0;
+  }
+
+  .agent-flow-tab {
+    display: flex;
+    border-bottom: 0.5px solid #d8d6cc;
+    background: #fff;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 0.85rem 0.5rem;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #888780;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .tab-btn.active {
+    color: #1D9E75;
+    border-bottom-color: #1D9E75;
+    background: #f8f7f4;
+  }
+
+  .tab-btn:hover:not(.active) {
+    color: #1a1a18;
+    background: #f4f3f0;
+  }
+
+  .tab-content {
+    padding: 1.4rem 1.75rem;
+    display: none;
+  }
+
+  .tab-content.active { display: block; }
+
+  /* Flow steps */
+  .flow-step {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+    align-items: flex-start;
+  }
+
+  .flow-step:last-child { margin-bottom: 0; }
+
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #E1F5EE;
+    color: #0F6E56;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .step-body { flex: 1; }
+
+  .step-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1a1a18;
+    margin-bottom: 4px;
+  }
+
+  .step-desc {
+    font-size: 0.83rem;
+    line-height: 1.65;
+    color: #5a5a56;
+  }
+
+  /* Boundary box */
+  .boundary-box {
+    border: 0.5px solid #c8c6bc;
+    border-radius: 12px;
+    padding: 1.4rem;
+    margin: 1.6rem 0;
+  }
+
+  .boundary-header {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888780;
+    margin-bottom: 1.1rem;
+  }
+
+  .boundary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+  }
+
+  .boundary-col {
+    padding: 0.85rem 1.1rem;
+    border-radius: 8px;
+    font-size: 0.83rem;
+    line-height: 1.65;
+  }
+
+  .agent-col { background: #E1F5EE; color: #085041; }
+  .human-col { background: #E6F1FB; color: #0C447C; }
+
+  .boundary-col-title {
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.87rem;
+  }
+
+  .boundary-col ul { list-style: none; padding: 0; }
+
+  .boundary-col ul li {
+    padding: 3px 0;
+    display: flex;
+    gap: 7px;
+    align-items: flex-start;
+  }
+
+  .boundary-col ul li::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .agent-col ul li::before { background: #0F6E56; }
+  .human-col ul li::before { background: #185FA5; }
+
+  /* Baseline table */
+  .baseline-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.83rem;
+    margin: 1.6rem 0;
+    table-layout: fixed;
+  }
+
+  .baseline-table th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888780;
+    padding: 0 14px 11px 0;
+    border-bottom: 0.5px solid #d8d6cc;
+  }
+
+  .baseline-table td {
+    padding: 11px 14px 11px 0;
+    color: #5a5a56;
+    border-bottom: 0.5px solid #d8d6cc;
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .baseline-table td:first-child {
+    color: #1a1a18;
+    font-weight: 500;
+  }
+
+  .baseline-table tr:last-child td { border-bottom: none; }
+
+  .freq-badge {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 99px;
+  }
+
+  .freq-6m { background: #FAEEDA; color: #854F0B; }
+  .freq-1y { background: #F1EFE8; color: #5F5E5A; }
+
+  /* Metadata block */
+  .metadata-block {
+    background: #fff;
+    border-radius: 8px;
+    border: 0.5px solid #d8d6cc;
+    padding: 1.1rem 1.4rem;
+    font-size: 12.5px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.75;
+    color: #5a5a56;
+    margin: 1.4rem 0;
+  }
+
+  .meta-key { color: #1D9E75; }
+  .meta-val { color: #1a1a18; }
+
+  /* Two column simple card */
+  .simple-card {
+    background: #fff;
+    border: 0.5px solid #d8d6cc;
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem;
+  }
+
+  .simple-card-title {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #1a1a18;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .simple-card-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .simple-card-body {
+    font-size: 0.83rem;
+    line-height: 1.68;
+    color: #5a5a56;
+  }
+
+  /* Divider & footer */
+  hr {
+    border: none;
+    border-top: 0.5px solid #d8d6cc;
+    margin: 3rem 0;
+  }
+
+  .footer {
+    font-size: 11px;
+    color: #888780;
+    line-height: 1.65;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-label">How-to guide &nbsp;·&nbsp; Information security</div>
+    <h1>Building an Information Security Standards Programme with AI Assistance</h1>
+    <p class="hero-sub">A practical guide for law firms establishing a self-service library of technology-agnostic standards and platform-specific security baselines — produced and maintained with the help of an AI agent.</p>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc-card">
+    <div class="toc-title">Contents</div>
+    <div class="toc-grid">
+      <a class="toc-item" href="#s1"><span class="toc-num">01</span><span class="toc-text">Why this matters for law firms</span></a>
+      <a class="toc-item" href="#s2"><span class="toc-num">02</span><span class="toc-text">Principles before practices</span></a>
+      <a class="toc-item" href="#s3"><span class="toc-num">03</span><span class="toc-text">The two-layer model</span></a>
+      <a class="toc-item" href="#s4"><span class="toc-num">04</span><span class="toc-text">The full standards library</span></a>
+      <a class="toc-item" href="#s5"><span class="toc-num">05</span><span class="toc-text">Technology baselines</span></a>
+      <a class="toc-item" href="#s6"><span class="toc-num">06</span><span class="toc-text">Phasing your programme</span></a>
+      <a class="toc-item" href="#s7"><span class="toc-num">07</span><span class="toc-text">The agentic workflow</span></a>
+      <a class="toc-item" href="#s8"><span class="toc-num">08</span><span class="toc-text">What the agent can and cannot do</span></a>
+      <a class="toc-item" href="#s9"><span class="toc-num">09</span><span class="toc-text">Document metadata &amp; governance</span></a>
+      <a class="toc-item" href="#s10"><span class="toc-num">10</span><span class="toc-text">ISO 27001 mapping</span></a>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title">Why this matters for law firms</div>
+    </div>
+    <p class="prose">Law firms occupy a uniquely exposed position in the threat landscape. Client matter data — often privileged, commercially sensitive, or subject to confidentiality obligations — is your core asset and your primary target. At the same time, global operations, complex supply chains, and rapid adoption of cloud and SaaS platforms mean the attack surface is expanding faster than most security teams can keep pace with.</p>
+    <p class="prose">ISO 27001 certification provides a compliance framework, but certification alone does not protect clients or the firm. What protects the firm is a security programme that is <strong>traceable to real business risk</strong>, <strong>consumable by the teams who must implement it</strong>, and <strong>maintained as the technology landscape changes</strong>. That is what this programme is designed to deliver.</p>
+    <div class="callout">
+      <div class="callout-label">The core problem</div>
+      Many law firms have security policies that exist as documents rather than as lived practice. They were written once, approved by a committee, filed in a SharePoint library, and have not been meaningfully updated since. Engineering teams either don't know they exist or cannot translate them into practical configuration decisions. This programme closes that gap.
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title">Principles before practices</div>
+    </div>
+    <p class="prose">Before producing a single standard, your programme needs to be anchored in principles — the "why" that informs every "what." Without this foundation, standards become disconnected from business need and are perceived as academic or irrelevant by the teams who must follow them.</p>
+    <p class="prose">For a global law firm, the driving principles are:</p>
+    <div class="principle-strip">
+      <span class="principle-pill">Enable business</span>
+      <span class="principle-pill">Inspire trust</span>
+      <span class="principle-pill">Enact resilience</span>
+      <span class="principle-pill">Balance risk</span>
+      <span class="principle-pill">Create certainty &amp; clarity</span>
+      <span class="principle-pill">Establish traceability</span>
+      <span class="principle-pill">Capitalise change &amp; agility</span>
+      <span class="principle-pill">Simplify complexity</span>
+      <span class="principle-pill">Solve holistically</span>
+      <span class="principle-pill">Ensure sustainability</span>
+    </div>
+    <p class="prose">Every standard in your library should be traceable to one or more of these principles. When a standard cannot be traced to a principle, it is a signal that the standard may be providing compliance theatre rather than genuine security value. The agent, during the drafting workflow, will explicitly ask you to confirm this traceability for each document it produces.</p>
+    <div class="callout">
+      <div class="callout-label">The right question to ask</div>
+      Not "are we correctly following the standard?" but "are we using the standard to achieve a secure, trustworthy outcome for the firm and its clients?" Standards are a means, not an end.
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title">The two-layer model</div>
+    </div>
+    <p class="prose">The programme operates on two distinct but connected layers. Understanding the distinction is critical — conflating them is one of the most common reasons security documentation fails to be useful.</p>
+    <div class="two-col">
+      <div class="simple-card">
+        <div class="simple-card-title"><div class="simple-card-dot" style="background:#1D9E75;"></div>Information security standards</div>
+        <div class="simple-card-body">Technology-agnostic documents that define <strong>what must be done and why</strong>. Audience: architects, product owners, assurance teams, and risk managers. These are enduring documents — they should not change every time a vendor releases a new feature.</div>
+      </div>
+      <div class="simple-card">
+        <div class="simple-card-title"><div class="simple-card-dot" style="background:#378ADD;"></div>Security baselines</div>
+        <div class="simple-card-body">Technology-specific configuration guides derived from standards, defining <strong>exactly how to implement</strong> the standard in a given platform. Audience: engineering teams and platform owners. These change frequently and benefit most from agent-assisted maintenance.</div>
+      </div>
+    </div>
+    <p class="prose">Every baseline maps to one or more parent standards. Every standard maps to one or more ISO 27001:2022 Annex A controls. This chain of traceability — from ISO control, through standard, to baseline configuration item — is what makes your programme audit-ready and internally defensible.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title">The full standards library</div>
+    </div>
+    <p class="prose">The recommended library for a global law firm comprises 44 standards across eight domains. Not all need to be produced on day one — see section 06 for phasing. The domains and their standards are:</p>
+
+    <div class="domain-grid">
+      <div class="domain-card">
+        <div class="domain-card-header">
+          <div class="domain-dot" style="background:#1D9E75;"></div>
+          <div class="domain-name">Identity &amp; access management</div>
+          <div class="domain-count">5 standards</div>
+        </div>
+        <ul class="domain-standards">
+          <li>IAM lifecycle <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Privileged access management <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Authentication, MFA &amp; passwordless <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Third-party &amp; vendor access <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Federation &amp; SSO <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+        </ul>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-header">
+          <div class="domain-dot" style="background:#D85A30;"></div>
+          <div class="domain-name">Data protection &amp; information governance</div>
+          <div class="domain-count">6 standards</div>
+        </div>
+        <ul class="domain-standards">
+          <li>Data classification &amp; handling <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Encryption <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Retention, archiving &amp; disposal <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Client matter data <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Cross-border data transfer <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>DLP <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+        </ul>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-header">
+          <div class="domain-dot" style="background:#378ADD;"></div>
+          <div class="domain-name">Cloud &amp; SaaS security</div>
+          <div class="domain-count">6 standards</div>
+        </div>
+        <ul class="domain-standards">
+          <li>Cloud security (agnostic) <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Cloud landing zone &amp; architecture <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>SaaS procurement &amp; onboarding <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Cloud identity &amp; entitlement (CIEM) <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Secrets &amp; key management <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Container &amp; serverless security <span class="priority-badge badge-low" style="margin-left:auto;">Phase 3</span></li>
+        </ul>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-header">
+          <div class="domain-dot" style="background:#BA7517;"></div>
+          <div class="domain-name">Endpoint &amp; device security</div>
+          <div class="domain-count">5 standards</div>
+        </div>
+        <ul class="domain-standards">
+          <li>Endpoint protection <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Mobile device &amp; MAM/MDM <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>BYOD <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Removable media <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Secure build &amp; image <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+        </ul>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-header">
+          <div class="domain-dot" style="background:#7F77DD;"></div>
+          <div class="domain-name">Network &amp; infrastructure security</div>
+          <div class="domain-count">5 standards</div>
+        </div>
+        <ul class="domain-standards">
+          <li>Network security &amp; segmentation <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Remote access (VPN/ZTNA) <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>DNS security <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Email security <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Certificate &amp; PKI management <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+        </ul>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-header">
+          <div class="domain-dot" style="background:#639922;"></div>
+          <div class="domain-name">Application &amp; development security</div>
+          <div class="domain-count">5 standards</div>
+        </div>
+        <ul class="domain-standards">
+          <li>Secure development lifecycle <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>API security <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Web application security <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>AI &amp; LLM usage <span class="priority-badge badge-low" style="margin-left:auto;">Phase 3</span></li>
+          <li>Third-party software &amp; OSS <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+        </ul>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-header">
+          <div class="domain-dot" style="background:#D4537E;"></div>
+          <div class="domain-name">Security operations, resilience &amp; response</div>
+          <div class="domain-count">7 standards</div>
+        </div>
+        <ul class="domain-standards">
+          <li>Logging, monitoring &amp; SIEM <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Vulnerability management <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Patch management <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Security incident management <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Business continuity &amp; DR <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Backup &amp; recovery <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Ransomware response <span class="priority-badge badge-low" style="margin-left:auto;">Phase 3</span></li>
+        </ul>
+      </div>
+
+      <div class="domain-card">
+        <div class="domain-card-header">
+          <div class="domain-dot" style="background:#888780;"></div>
+          <div class="domain-name">Governance, risk, compliance &amp; supply chain</div>
+          <div class="domain-count">8 standards</div>
+        </div>
+        <ul class="domain-standards">
+          <li>Information security risk management <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Third-party &amp; supply chain risk <span class="priority-badge badge-high" style="margin-left:auto;">Phase 1</span></li>
+          <li>Asset management <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Physical &amp; environmental security <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Security awareness &amp; training <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Policy exception &amp; waiver <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Legal &amp; regulatory compliance <span class="priority-badge badge-med" style="margin-left:auto;">Phase 2</span></li>
+          <li>Insider threat <span class="priority-badge badge-low" style="margin-left:auto;">Phase 3</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-title">Technology baselines</div>
+    </div>
+    <p class="prose">For a global law firm operating on M365, Azure/AWS, and a mix of managed endpoints, the priority baseline set is as follows. Each baseline references its parent standard(s) and should be reviewed on the cadence shown.</p>
+
+    <table class="baseline-table">
+      <thead>
+        <tr>
+          <th style="width:28%;">Baseline</th>
+          <th style="width:42%;">Parent standard(s)</th>
+          <th style="width:14%;">Review</th>
+          <th style="width:16%;">Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Microsoft Entra ID</td><td>IAM lifecycle, Auth &amp; MFA, Federation &amp; SSO</td><td><span class="freq-badge freq-6m">6 months</span></td><td><span class="priority-badge badge-high">Phase 1</span></td></tr>
+        <tr><td>M365 (Exchange, Teams, SharePoint)</td><td>Email security, DLP, Data classification</td><td><span class="freq-badge freq-6m">6 months</span></td><td><span class="priority-badge badge-high">Phase 1</span></td></tr>
+        <tr><td>Microsoft Defender suite</td><td>Endpoint protection, SIEM, Incident mgmt</td><td><span class="freq-badge freq-6m">6 months</span></td><td><span class="priority-badge badge-high">Phase 1</span></td></tr>
+        <tr><td>Microsoft Purview</td><td>DLP, Data classification, Retention</td><td><span class="freq-badge freq-6m">6 months</span></td><td><span class="priority-badge badge-high">Phase 1</span></td></tr>
+        <tr><td>Azure landing zone</td><td>Cloud security, Cloud architecture</td><td><span class="freq-badge freq-6m">6 months</span></td><td><span class="priority-badge badge-med">Phase 2</span></td></tr>
+        <tr><td>AWS foundations</td><td>Cloud security, Cloud architecture</td><td><span class="freq-badge freq-6m">6 months</span></td><td><span class="priority-badge badge-med">Phase 2</span></td></tr>
+        <tr><td>Windows endpoint (CIS L1/L2)</td><td>Endpoint protection, Secure build</td><td><span class="freq-badge freq-1y">Annual</span></td><td><span class="priority-badge badge-med">Phase 2</span></td></tr>
+        <tr><td>macOS endpoint</td><td>Endpoint protection, Secure build</td><td><span class="freq-badge freq-1y">Annual</span></td><td><span class="priority-badge badge-med">Phase 2</span></td></tr>
+        <tr><td>iOS / Android (Intune MAM/MDM)</td><td>Mobile device, BYOD</td><td><span class="freq-badge freq-1y">Annual</span></td><td><span class="priority-badge badge-med">Phase 2</span></td></tr>
+        <tr><td>Document management system</td><td>Client matter data, DLP</td><td><span class="freq-badge freq-1y">Annual</span></td><td><span class="priority-badge badge-med">Phase 2</span></td></tr>
+        <tr><td>Privileged access workstation</td><td>PAM, Endpoint protection</td><td><span class="freq-badge freq-1y">Annual</span></td><td><span class="priority-badge badge-med">Phase 2</span></td></tr>
+        <tr><td>GitHub / Azure DevOps</td><td>SDL, Secrets management</td><td><span class="freq-badge freq-1y">Annual</span></td><td><span class="priority-badge badge-low">Phase 3</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-title">Phasing your programme</div>
+    </div>
+    <p class="prose">Attempting to produce all 44 standards simultaneously is counterproductive. A phased approach lets you demonstrate early value to ISO auditors, build momentum with internal teams, and use learnings from early standards to improve later ones.</p>
+
+    <div style="margin:1.75rem 0;">
+      <div class="phase-row">
+        <div class="phase-label">
+          <div class="phase-circle" style="background:#E1F5EE;color:#0F6E56;">1</div>
+          <div class="phase-months">Months 1–4</div>
+        </div>
+        <div>
+          <div class="phase-title">Foundation — highest audit exposure &amp; law firm-specific risk</div>
+          <div class="phase-desc">IAM lifecycle, Data classification, Encryption, Client matter data, Incident management, Third-party risk, Patch management, Cloud security (agnostic), and Vulnerability management. Paired baselines: Entra ID, M365, Defender, and Purview. These 10 standards directly address the most likely ISO 27001 audit findings for a law firm and protect the most critical assets from day one.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-label">
+          <div class="phase-circle" style="background:#E6F1FB;color:#185FA5;">2</div>
+          <div class="phase-months">Months 4–8</div>
+        </div>
+        <div>
+          <div class="phase-title">Expansion — full cloud domain, network, and regulatory coverage</div>
+          <div class="phase-desc">Full cloud security domain (landing zone, SaaS procurement, CIEM, secrets management), remaining endpoint and network standards, the legal and regulatory compliance standard (structurally complex given multi-jurisdiction footprint), SDL if you have engineering activity, and the cross-border data transfer standard. Azure and AWS baselines produced in this phase.</div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-label">
+          <div class="phase-circle" style="background:#FAEEDA;color:#854F0B;">3</div>
+          <div class="phase-months">Months 8–12</div>
+        </div>
+        <div>
+          <div class="phase-title">Maturity — emerging risk and operational excellence</div>
+          <div class="phase-desc">AI and LLM usage standard (allow your firm's usage patterns to stabilise before locking down the standard), insider threat, ransomware response playbook, container and serverless security. By this phase, the agent is in maintenance mode on Phase 1 standards, producing first review reports against changed vendor and regulatory guidance.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <div class="section-title">The agentic workflow</div>
+    </div>
+    <p class="prose">The AI agent operates across three distinct workflows. Each is designed to produce a specific output with a defined human approval gate. The agent is never the final decision-maker — it is your drafter, analyst, and reviewer.</p>
+
+    <div class="agent-flow">
+      <div class="agent-flow-tab">
+        <button class="tab-btn active" onclick="showTab(this,'draft')">Drafting a standard</button>
+        <button class="tab-btn" onclick="showTab(this,'baseline')">Generating a baseline</button>
+        <button class="tab-btn" onclick="showTab(this,'review')">Review &amp; maintenance</button>
+      </div>
+
+      <div id="tab-draft" class="tab-content active">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Provide inputs to the agent</div>
+            <div class="step-desc">Supply your approved standard template, the relevant ISO 27001:2022 Annex A controls, any regulatory context (e.g. SRA Principle 7, GDPR Article 32), and your organisation's context profile — law firm, global, M365/cloud-first, complex supply chain.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Agent produces a full draft</div>
+            <div class="step-desc">The agent completes every section of the template, including: purpose and scope, control requirements with rationale, a principle traceability statement, an ISO 27001 mapping table, audience guidance for each internal team, and a list of assumptions made that require human validation.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">SME review and amendment</div>
+            <div class="step-desc">Your subject matter expert reviews the draft. The agent gets you 70–80% of the way there — the remaining 20–30% is where your specific environment knowledge is irreplaceable. Particular attention to: law-firm-specific clauses, jurisdiction-specific requirements, and any control decisions that reflect conscious risk acceptance.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-title">Named human approval and publication</div>
+            <div class="step-desc">A named approver reviews and signs off. The metadata block is completed. The standard is published to the self-service repository. The approval event — with approver name, date, and version — is the ISO 27001 evidence record.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-baseline" class="tab-content">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Start from an approved parent standard</div>
+            <div class="step-desc">Baseline generation is only triggered once the relevant parent standard is approved. The baseline is a derived artefact — it inherits the "why" from the standard and translates it into platform-specific "how."</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Agent maps benchmark to standard</div>
+            <div class="step-desc">The agent takes the parent standard alongside the relevant vendor hardening guide (e.g. CIS Microsoft 365 Foundations Benchmark) and maps every configuration item to a requirement in the standard. Items with no parent requirement are flagged — either adopt them or create an explicit exception.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Every line is traceable</div>
+            <div class="step-desc">The output is a baseline where every configuration item carries: the configuration requirement, the rationale, the parent standard clause reference, the ISO 27001 Annex A control, and the implementation priority. This is what makes baselines audit-ready rather than just configuration checklists.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-title">Engineering team validation and approval</div>
+            <div class="step-desc">The relevant platform engineering team validates the baseline against the actual environment. Exceptions are documented in the exception register rather than silently omitted. Approved and published with the same governance as standards.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-review" class="tab-content">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Review is triggered by metadata date</div>
+            <div class="step-desc">Each document carries a "next review date" in its metadata block. When that date arrives, the review workflow is triggered. Cloud and M365 baselines review every six months; most standards annually.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Agent analyses what has changed</div>
+            <div class="step-desc">The agent is given the current approved document, relevant vendor changelogs and security advisories since the last review, updated ISO 27001 guidance, and the current exception register. It produces a structured review report: what has changed externally, which clauses are potentially stale, and what requires a human decision vs. what can be updated automatically.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Human reviews the report and decides</div>
+            <div class="step-desc">The document owner reviews the agent's report. Each flagged item is either accepted (agent updates the document), rejected with a rationale, or escalated as a risk item. The agent produces a revised draft incorporating approved changes.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-title">Republish with updated metadata</div>
+            <div class="step-desc">The revised document is approved and republished. The review event is logged as an ISO 27001 evidence record. The exception register is updated to reflect any new gaps identified.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <div class="section-title">What the agent can and cannot do</div>
+    </div>
+    <p class="prose">For ISO 27001 purposes, the boundary between agent and human responsibility must be explicit and consistently observed. This is itself a control you can evidence to your auditor.</p>
+
+    <div class="boundary-box">
+      <div class="boundary-header">Responsibility boundary</div>
+      <div class="boundary-grid">
+        <div class="boundary-col agent-col">
+          <div class="boundary-col-title">The agent</div>
+          <ul>
+            <li>Drafts standards and baselines</li>
+            <li>Maps controls to ISO 27001 clauses</li>
+            <li>Identifies gaps between baseline and benchmark</li>
+            <li>Analyses what has changed since last review</li>
+            <li>Produces exception register entries for gaps</li>
+            <li>Flags assumptions requiring human validation</li>
+            <li>Updates document metadata fields</li>
+            <li>Produces traceability matrices</li>
+          </ul>
+        </div>
+        <div class="boundary-col human-col">
+          <div class="boundary-col-title">Humans only</div>
+          <ul>
+            <li>Approve and publish any document</li>
+            <li>Accept risk on behalf of the firm</li>
+            <li>Grant policy exceptions or waivers</li>
+            <li>Retire or deprecate a standard</li>
+            <li>Interpret jurisdiction-specific legal obligations</li>
+            <li>Make decisions with client confidentiality implications</li>
+            <li>Sign off ISO 27001 evidence records</li>
+            <li>Escalate to senior leadership or the board</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-label">Audit tip</div>
+      Document this boundary in your ISMS. Your auditor will ask how AI-assisted drafting is governed. "The agent drafts; named humans approve; approval events are dated records" is a clean and defensible answer.
+    </div>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-num">09</div>
+      <div class="section-title">Document metadata &amp; governance</div>
+    </div>
+    <p class="prose">The metadata block is the connective tissue of the entire programme. The agent reads and writes it as part of every workflow. Every standard and baseline must carry the following fields:</p>
+
+    <div class="metadata-block">
+      <span class="meta-key">document_id:</span>       <span class="meta-val">ISS-IAM-001</span><br>
+      <span class="meta-key">domain:</span>             <span class="meta-val">Identity &amp; Access Management</span><br>
+      <span class="meta-key">type:</span>               <span class="meta-val">Standard | Baseline</span><br>
+      <span class="meta-key">owner_role:</span>         <span class="meta-val">Head of Information Security Architecture</span><br>
+      <span class="meta-key">approver_role:</span>      <span class="meta-val">Chief Information Security Officer</span><br>
+      <span class="meta-key">version:</span>            <span class="meta-val">1.2</span><br>
+      <span class="meta-key">status:</span>             <span class="meta-val">Approved | Draft | Under Review | Deprecated</span><br>
+      <span class="meta-key">last_review_date:</span>   <span class="meta-val">2025-01-15</span><br>
+      <span class="meta-key">next_review_date:</span>   <span class="meta-val">2026-01-15</span><br>
+      <span class="meta-key">iso_27001_clauses:</span>  <span class="meta-val">[ 5.15, 5.16, 5.17, 5.18 ]</span><br>
+      <span class="meta-key">related_standards:</span>  <span class="meta-val">[ ISS-IAM-002, ISS-IAM-003 ]</span><br>
+      <span class="meta-key">related_baselines:</span>  <span class="meta-val">[ BSL-ENTRA-001, BSL-M365-001 ]</span><br>
+      <span class="meta-key">applicable_jurisdictions:</span> <span class="meta-val">[ Global ]</span><br>
+      <span class="meta-key">exceptions_in_flight:</span> <span class="meta-val">[ EXC-2025-047 ]</span><br>
+      <span class="meta-key">principle_traceability:</span> <span class="meta-val">[ Enable Business, Inspire Trust, Create Certainty ]</span>
+    </div>
+
+    <p class="prose">Store all standards and baselines in a version-controlled repository — Confluence, SharePoint with versioning enabled, or a Git-based documentation system. The agent must be able to read the current approved version and write a proposed revision for human review. Approved versions must be immutable; only a new version number and a named approval event can supersede them.</p>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div class="section-title">ISO 27001 mapping</div>
+    </div>
+    <p class="prose">One of the earliest high-value outputs the agent can produce is a gap analysis showing which ISO 27001:2022 Annex A controls are covered by which standards, and which controls currently have no standard owner. This gives you a clear audit readiness view and a prioritisation tool for the programme backlog.</p>
+    <p class="prose">The agent produces this as a traceability matrix: rows are ISO 27001 controls, columns are your standards. Each cell is either covered, partially covered, or a gap. Gaps feed directly into the Phase 1 prioritisation. Partial coverage items generate a specific drafting task to add the missing clauses to an existing standard.</p>
+    <div class="callout">
+      <div class="callout-label">To get started</div>
+      Share your existing example standards with the agent. It will analyse the template structure, assess current ISO 27001 coverage, and produce both a gap analysis and a draft of the next priority standard in your template format. The first draft is the hardest — once your template and context are established, subsequent standards build on that foundation rapidly.
+    </div>
+  </div>
+
+  <hr>
+  <div class="footer">
+    This document was produced using an AI-assisted drafting approach and should be reviewed and approved by a named information security lead before adoption within your organisation. It is technology-agnostic guidance — specific implementation decisions must reflect your firm's environment, risk appetite, and regulatory obligations. &copy; 2026.
+  </div>
+
+</div>
+
+<script>
+  function showTab(btn, id) {
+    var parent = btn.closest('.agent-flow');
+    parent.querySelectorAll('.tab-btn').forEach(function(t){ t.classList.remove('active'); });
+    parent.querySelectorAll('.tab-content').forEach(function(c){ c.classList.remove('active'); });
+    btn.classList.add('active');
+    parent.querySelector('#tab-' + id).classList.add('active');
+  }
+</script>
+</body>
+</html>
